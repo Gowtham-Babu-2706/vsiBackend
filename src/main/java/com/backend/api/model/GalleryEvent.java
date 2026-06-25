@@ -31,6 +31,7 @@ public class GalleryEvent {
     @Column(name = "full_description", columnDefinition = "TEXT")
     private String fullDescription;
 
+    @Column(name = "banner", columnDefinition = "TEXT")
     private String banner;
     private String videoUrl;
     private String videoType; // "mp4" or "youtube"

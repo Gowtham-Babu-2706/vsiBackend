@@ -28,5 +28,6 @@ public class ServiceEntity {
     private String description;
 
     private String icon; // Lucide icon identifier string
-    private String banner; // Banner image URL
+    @Column(name = "banner", columnDefinition = "TEXT")
+    private String banner; // Banner image URL or Base64 string
 }
