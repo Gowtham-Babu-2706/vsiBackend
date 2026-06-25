@@ -43,7 +43,7 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/login", "/api/auth/seed").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/bookings").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/payments/create-payment-intent").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/events", "/api/events/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/events", "/api/events/**", "/api/services", "/api/services/**", "/api/gallery", "/api/gallery/**").permitAll()
                         // Secured endpoints (admin required)
                         .anyRequest().authenticated()
                 )
