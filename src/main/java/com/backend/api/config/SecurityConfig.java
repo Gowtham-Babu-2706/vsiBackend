@@ -43,7 +43,8 @@ public class SecurityConfig {
                         .requestMatchers("/api/auth/login", "/api/auth/seed").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/bookings").permitAll()
                         .requestMatchers(HttpMethod.POST, "/api/payments/create-payment-intent").permitAll()
-                        .requestMatchers(HttpMethod.GET, "/api/events", "/api/events/**", "/api/services", "/api/services/**", "/api/gallery", "/api/gallery/**").permitAll()
+                        .requestMatchers(HttpMethod.GET, "/api/events", "/api/events/**", "/api/services", "/api/services/**", "/api/gallery", "/api/gallery/**", "/api/testimonials").permitAll()
+                        .requestMatchers(HttpMethod.POST, "/api/testimonials").permitAll()
                         // Secured endpoints (admin required)
                         .anyRequest().authenticated()
                 )
@@ -60,7 +61,7 @@ public class SecurityConfig {
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration configuration = new CorsConfiguration();
         // Allow common React ports in local development
-        configuration.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:5174", "http://127.0.0.1:5173", "http://127.0.0.1:5174","https://vsi-creation.vercel.app/","https://vsicreation-admin.vercel.app/"));
+        configuration.setAllowedOrigins(List.of("http://localhost:5173", "http://localhost:5174", "http://localhost:5175", "http://127.0.0.1:5173", "http://127.0.0.1:5174", "http://127.0.0.1:5175", "https://vsicreations.com/", "https://vsicreation-admin.vercel.app/", "https://www.vsicreations.com"));
         configuration.setAllowedMethods(List.of("GET", "POST", "PUT", "DELETE", "OPTIONS"));
         configuration.setAllowedHeaders(List.of("Authorization", "Content-Type", "Access-Control-Allow-Origin"));
         configuration.setExposedHeaders(List.of("Authorization"));
