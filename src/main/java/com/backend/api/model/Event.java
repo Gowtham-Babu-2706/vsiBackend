@@ -49,3 +49,5 @@ public class Event {
     @ToString.Exclude
     private List<EventSchedule> schedule = new ArrayList<>();
 }
+
+//finaliily working
