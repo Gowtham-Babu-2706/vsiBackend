@@ -28,15 +28,14 @@ public class DataInitializer implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         // 1. Seed admin user
-        String adminUsername = "admin@vsicreations.com";
+        String adminUsername = "vsicreations@gmail.com";
         if (userRepository.findByUsername(adminUsername).isEmpty()) {
             User admin = User.builder()
                     .username(adminUsername)
-                    .password(passwordEncoder.encode("AdminPassword123"))
+                    .password(passwordEncoder.encode("vsicreations@gmail.com"))
                     .role("ROLE_ADMIN")
                     .build();
             userRepository.save(admin);
-            System.out.println("Default admin user seeded: admin@vsicreations.com / AdminPassword123");
         }
 
     }
